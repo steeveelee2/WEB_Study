@@ -1,0 +1,188 @@
+<html>
+    <head>
+        <title>CSS 기본 선택자 2</title>
+        <style>
+            /* 속성 선택자 */
+            div[name=name2]{
+                background: lightcyan;
+            }
+            div[name~=name1]{
+                background: lightskyblue;
+            }
+            div[class|=class]{
+                background: magenta;
+            }
+            div[name^=name]{
+                background: hotpink;
+            }
+            div[class$=class]{
+                background: navy;
+            }
+            div[class*='_']{
+                background: cyan;
+            }
+
+            /* 자손 선택자 */
+            #test1>h4{
+                background: greenyellow;
+            }
+            #test1>#testul>li{
+                background: darkred;
+            }
+
+            /* 후손 선택자 */
+            #test1 h4{
+                color: lightpink;
+            }
+            #test1 li{
+                color: aquamarine;
+            }
+
+            /* 동위 선택자 */
+            #div_test1 {
+                background: dodgerblue;
+            }
+            #div_test2+div{
+                background: lime;
+            }
+            /* #div_test1~div{
+                background: red;
+                color:green;
+            } */
+
+            /* 반응 선택자 */
+            /* 반응 하기 전 */
+            #active_test,#hover_test{
+                /* 반응 전의 초기 스타일 */
+                width:300px;
+                height:300px;
+                background: coral;
+                margin: 10px;
+            }
+            /* 반응 했을 때 */
+            #active_test:active{
+                background: blueviolet;
+                color:brown;
+            }
+            #hover_test:hover{
+                background: aqua;
+                color:sienna;
+            }
+
+            /* 상태 선택자 */
+            input[type='checkbox']:checked{
+                width:200px;
+                height:200px;
+            }
+
+            /* focus 선택자 */
+            #userid, #userpwd:focus{
+                border:1px solid pink;
+                background: lightsalmon;
+            }
+
+            /* 사용 가능 여부 */
+            option:disabled{
+                color:red;
+            }
+            option:enabled{
+                color:blue;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>CSS 기본 선택자 2</h1>
+        <hr>
+        <h2>속성 선택자</h2>
+        <p>기본 선택자 뒤에 []를 사용하여 특정 속성과 해당 속성값을 통해 스타일을 적용할 때 사용한다</p>
+        <pre>선택자[속성=속성값]{. . .} 형식으로 사용
+            = : 속성값과 같을 때
+            ~= : 특정 단어를 속성값으로 가질 때 (띄어쓰기로 구분) 단어단위
+            |= : 특정 단어를 속성값으로 가질 때 (""로 구분) 단어단위
+            ^= : 속성값이 특정 단어로 시작할 때 단어내에서도 가능
+            $= : 속성값이 특정 단어로 끝날 때 "
+            *= : 속성값이 특정 단어를 포함할 때 "
+        </pre>
+
+        <div name="name1" class="div_class">div1</div>
+        <div name="name2" class="div_class">div2</div>
+        <div name="name3" class="div_class">div3</div>
+        <div name="name4" class="div_class">div4</div>
+        <div name="name5" class="div_class">div5</div>
+
+        <hr>
+
+        <h2>자손 선택자와 후손 선택자</h2>
+        <p>자손 선택자 : 바로 아래의 태그, 요소<br>
+            후손 선택자 : 하위에 존재하는 모든 태그, 요소</p>
+        <pre>
+            자손 선택자 : 부모선택자>자손선택자{. . .}
+            후손 선택자 : 선조선택자 후손선택자{. . .}
+        </pre>
+        <div id="test1"> <!-- 부모 선택자 -->
+            <h4>자손 알파</h4>
+            <h4>자손 베타</h4>
+            <ul id="testul">자손 찰리
+                <li>ul의 자손임과 동시에 div의 후손</li>
+                <li>ul의 자손임과 동시에 div의 후손</li>
+                <li>ul의 자손임과 동시에 div의 후손</li>
+            </ul>
+
+        </div>
+
+        <hr>
+
+        <h2>동위 선택자</h2>
+        <p>동위 선택자는 동급 관계에 있는 형제 요소를 선택하고자 할 때 사용함</p>
+        <pre>
+            선택자A+선택자B{. . .} : + 뒤에 있는 요소를 선택
+            선택자A~선택자B{. . .} : 뒤의 모든 요소 선택
+        </pre>
+        <div id="div_test1">DIV_TEST 1</div>
+        <div id="div_test2">DIV_TEST 2</div>
+        <div id="div_test3">DIV_TEST 3</div>
+        <div id="div_test4">DIV_TEST 4</div>
+        <div id="div_test5">DIV_TEST 5</div>
+
+        <hr>
+
+        <h2>반응 선택자</h2>
+        <p>사용자의 움직임(마우스 클릭 등)을 통해 달라지는 스타일을 적용할 때 사용한다</p>
+        <pre>
+            선택자:active{. . .} : 사용자가 마우스 클릭했을때
+            선택자:hover{. . .} : 마우스 커서가 해당 요소 위에 올라갔을 때
+        </pre>
+        <div id="active_test">Active 테스트</div>
+        <div id="hover_test">Hover 테스트</div>
+
+        <hr>
+
+        <h2>상태 선택자</h2>
+        <p>입력 양식에 따라 변화하는 스타일을 적용할 때 사용한다</p>
+        <pre>
+            input:checked{. . .} : 체크 상태 여부에 따라 스타일을 적용할 때
+        </pre>
+
+        <input type="checkbox" name="fruits" id="gam"><label for="gam">감</label>
+        <input type="checkbox" name="fruits" id="apple"><label for="apple">사과</label>
+        <input type="checkbox" name="fruits" id="banana"><label for="banana">바나나</label>
+
+        <p>focus가 맞춰진 상태인지 확인하여 스타일 적용도 가능하다</p>
+        <label>아이디 : </label><input type="text" id="userid" placeholder="ID를 입력하시오" autofocus>
+        <br>
+        <label>비밀번호 : </label><input type="password" id="userpwd" placeholder="비밀번호를 입력하시오">
+
+        <p>사용 가능 여부에 따른 스타일 적용하기</p>
+        입장 가능 나이 : 
+        <select>
+            <option value="10" disabled>10대</option>
+            <option value="20">20대</option>
+            <option value="30">30대</option>
+            <option value="40">40대</option>
+            <option value="50" disabled>50대</option>
+        </select>
+        <br>
+        <a href="index.html">처음으로 돌아가기</a>
+    </body>
+</html>
