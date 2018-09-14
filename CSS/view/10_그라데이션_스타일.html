@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <title>그라데이션 스타일</title>
+        <style>
+            .linear_gradation{
+                width: 300px;
+                height: 300px;
+                border: 1px solid red;
+            }
+            #gradation1{
+                background: linear-gradient(to bottom,greenyellow,white);
+                background: -webkit-linear-gradient(top,greenyellow,white);
+                background: -moz-linear-gradient(top,greenyellow,white);
+                background: -ms-linear-gradient(top,greenyellow,white);
+                background: -o-linear-gradient(top,greenyellow,white);
+            }
+            #gradation2{
+                background: linear-gradient(45deg,blueviolet,white);
+                background: -webkit-linear-gradient(45deg,blueviolet,white);
+                background: -moz-linear-gradient(45deg,blueviolet,white);
+                background: -ms-linear-gradient(45deg,blueviolet,white);
+                background: -o-linear-gradient(45deg,blueviolet,white);
+            }
+            #gradation3{
+                background: linear-gradient(to right,rgb(0, 217, 255),white 50%,crimson);
+                background: -webkit-linear-gradient(left,rgb(0, 217, 255),white 50%,crimson);
+                background: -moz-linear-gradient(left,rgb(0, 217, 255),white 50%,crimson);
+                background: -ms-linear-gradient(left,rgb(0, 217, 255),white 50%,crimson);
+                background: -o-linear-gradient(left,rgb(0, 217, 255),white 50%,crimson);
+            }
+            #gradation4{
+                background: linear-gradient(135deg,purple,navy 16%,blue 33%,green 50%,yellow 66%,orange 83%,red);
+                background: -webkit-linear-gradient(135deg,purple,navy 16%,blue 33%,green 50%,yellow 66%,orange 83%,red);
+                background: -moz-linear-gradient(135deg,purple,navy 16%,blue 33%,green 50%,yellow 66%,orange 83%,red);
+                background: -ms-linear-gradient(135deg,purple,navy 16%,blue 33%,green 50%,yellow 66%,orange 83%,red);
+                background: -o-linear-gradient(135deg,purple,navy 16%,blue 33%,green 50%,yellow 66%,orange 83%,red);
+            }
+            #gradation5{
+                background: repeating-linear-gradient(to top,hotpink,lightpink 30%);
+            }
+            #gradation6{
+                background: repeating-linear-gradient(black,black 5%,gray,gray 10%);
+            }
+
+            .circle_gradation{
+                width: 300px;
+                height: 200px;
+                border: 1px solid blue;
+            }
+            #gradation7{
+                background: radial-gradient(white,blue,red);
+            }
+            #gradation8{
+                background: radial-gradient(circle,white,blue,red);
+            }
+            #gradation9{
+                background: -webkit-radial-gradient(90% 90%,white,red,blue);
+            }
+            #gradation10{
+                background: -webkit-radial-gradient(30% 40%,circle closest-corner,white,red,blue);
+            }
+            #gradation11{
+                background: -webkit-radial-gradient(30% 40%,circle farthest-side,white,red,blue);
+            }
+            #gradation12{
+                background: -webkit-radial-gradient(30% 40%,circle farthest-corner,white,red,blue);
+            }
+            #gradation13{
+                background: -webkit-radial-gradient(30% 40%,circle closest-side,white,red,blue);
+            }
+
+            #gradation14{
+                background: -webkit-repeating-radial-gradient(30% 40%,circle farthest-corner,white,green,red 15%);
+            }
+            #gradation15{
+                background: -webkit-repeating-radial-gradient(30% 40%,circle farthest-corner,white,white 5%,green,green 10%,red,red 15%);
+            }
+        </style>
+    </head>
+    <body>
+        <h1>그라데이션 스타일</h1>
+        <p>웹 표준으로 지정은 되었지만 이전 버전 혹은 다른 웹 브라우저와의 호환성을 위해 각 브라우저 별로 속성 앞에 접두사를 붙인다</p>
+
+        <h3>선형 그라데이션</h3>
+        <p>특정 색상이 수직, 수평, 대각성 방향으로 점차적인 변화를 보이는 것</p>
+        <h4>색상만 지정하면</h4>
+        <div id="gradation1" class="linear_gradation"></div>
+
+        <h4>방향을 지정하면</h4>
+        <div id="gradation2" class="linear_gradation"></div>
+
+        <h4>중간 색을 지정하면</h4>
+        <div id="gradation3" class="linear_gradation"></div>
+
+        <h4>중간 색이 여러개면</h4>
+        <div id="gradation4" class="linear_gradation"></div>
+
+        <h4>그라데이션 반복</h4>
+        <div id="gradation5" class="linear_gradation"></div>
+
+        <h4>그라데이션 반복(색상을 명확하게 구분)</h4>
+        <div id="gradation6" class="linear_gradation"></div>
+
+        <hr>
+
+        <h3>원형 그라데이션</h3>
+        <p>색상이 원이나 타원의 중심부부터 동심원을 그리며 바깥으로 색상이 변해감</p>
+        
+        <h4>색상만 지정</h4>
+        <div id="gradation7" class="circle_gradation"></div>
+
+        <h4>모양을 지정</h4>
+        <div id="gradation8" class="circle_gradation"></div>
+
+        <h4>시작점을 지정</h4>
+        <div id="gradation9" class="circle_gradation"></div>
+
+        <h4>사이즈 지정</h4>
+        <div id="gradation10" class="circle_gradation"></div>
+        <div id="gradation11" class="circle_gradation"></div>
+        <div id="gradation12" class="circle_gradation"></div>
+        <div id="gradation13" class="circle_gradation"></div>
+
+        <h4>원형 그라데이션 반복</h4>
+        <div class="circle_gradation" id="gradation14">원형 그라데이션 반복</div>
+        <div class="circle_gradation" id="gradation15">원형 그라데이션 반복(색상 명확히)</div>
+
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>배경 스타일</title>
+        <style>
+            body{
+                background-color: cyan;
+            }
+            #div_bg{
+                width: 50%;
+                background-color: red;
+            }
+
+            /* 배경 영역 설정하기 */
+            .div-test{
+                background-color: blueviolet;
+                margin:30px;
+                padding: 20px;
+                width: 20%;
+                border: 5px dashed greenyellow;
+                /*float: left;*/
+            }
+            #div1{
+                background-clip: border-box;
+            }
+            #div2{
+                background-clip: padding-box;
+            }
+            #div3{
+                background-clip: content-box;
+            }
+            
+            /* 배경 이미지 설정하기 */
+            #div_img{
+                width: 70%;
+                height: 800px;
+                border: 1px solid yellow;
+                background-image: url(../resource/image/tower1.PNG);
+                /* background-repeat: no-repeat; 반복없음 */
+                /* background-repeat: repeat; 격자반복 */
+                /* background-repeat: repeat-x; 가로반복 */
+                /* background-repeat: repeat-y; 세로반복 */
+                /* background-size: auto; 기본값 */
+                /* background-size: 80% 80%; 임의의 값 */
+                /* background-size: contain; 가로로 채움(그림 기준) */
+                /* background-size: cover; 세로로 채움(공간 기준) */
+                
+                /* background-position: 50% 50%; 가운데 위치 */
+                /* background-position: left top; */
+                /* background-position: right top; */
+                /* background-position: center top; */
+                /* background-position: left bottom; */
+                /* background-position: right top; */
+                /* background-position: center top; */
+                /* background-position: left center; */
+                /* background-position: right center; */
+                /* background-position: center center; */
+
+                /* background-attachment: fixed; 배경 고정 */
+                /* background-attachment: scroll; */
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>배경 스타일</h1>
+        <h3>배경 색 적용하기</h3>
+        <pre>body{ background-color : 색상; }</pre>
+
+        <hr>
+
+        <h3>div 배경 적용하기</h3>
+        <p>div 영역을 설정한 뒤에 배경색을 지정하기 위해서는 div에 별도로 배경색을 적용해야한다</p>
+        <div id="div_bg">
+            혼인과 가족생활은 개인의 존엄과 양성의 평등을 기초로 성립되고 유지되어야 하며, 국가는 이를 보장한다. 국채를 모집하거나 예산외에 국가의 부담이 될 계약을 체결하려 할 때에는 정부는 미리 국회의 의결을 얻어야 한다.
+        </div>
+
+        <hr>
+
+        <h3>배경의 적용 범위 선택하기</h3>
+        <p>배경의 영역을 설정할 때, 배경 색상만 설정할 수 있는 것이 아니라 background-clip 속성을 통해 배경 범위도 설정 가능함</p>
+        <div class="div-test" id="div1">
+            국민의 자유와 권리는 헌법에 열거되지 아니한 이유로 경시되지 아니한다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다.
+        </div>
+        <div class="div-test" id="div2">
+            정부는 예산에 변경을 가할 필요가 있을 때에는 추가경정예산안을 편성하여 국회에 제출할 수 있다. 이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다.
+        </div>
+        <div class="div-test" id="div3">
+            모든 국민은 통신의 비밀을 침해받지 아니한다. 대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다.
+        </div>
+        
+        <hr>
+
+        <h3>배경 이미지 적용하기</h3>
+        <p>background-image 속성을 활용하여 배경 사진을 넣을 수 있다<br>
+            사진의 크기에 따라 반복 여부를 설정할 수 있으며 배경 이미지가 배경의 크기보다 크거나 작을 경우 이미지를 자를 수 있다<br>
+            이때 사용하는 속성이 각각 repeat, size</p>
+        <div id="div_img"></div>
+    </body>
+</html>
