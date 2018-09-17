@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>레이아웃 스타일 5</title>
+        <style>
+            .wrap{
+                border: 1px solid aqua;
+                height: 300px;
+            }
+            .column1{
+                column-width: 300px;
+                column-gap: 50px;
+                overflow: scroll; /* 넘치는 내용은 스크롤로 대체 */
+            }
+            .column2{
+                column-count: 3;
+                column-rule-style: dashed;
+                overflow: scroll;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>레이아웃 스타일 5</h1>
+        <pre>
+            column-width : 한 단의 가로 길이
+            column-gap : 각 단의 너비
+            column-rule-style : 각 단의 구분자 모양
+            column-count : 필요한 단의 수
+        </pre>
+
+        <hr>
+
+        <h3>다단 스타일 작성하기 1</h3>
+        <div class="wrap column1">
+            국가는 대외무역을 육성하며, 이를 규제·조정할 수 있다. 국민의 자유와 권리는 헌법에 열거되지 아니한 이유로 경시되지 아니한다.
+            군사재판을 관할하기 위하여 특별법원으로서 군사법원을 둘 수 있다.
+            대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다.
+            헌법재판소의 장은 국회의 동의를 얻어 재판관중에서 대통령이 임명한다.
+        </div>
+        <h3>다단 스타일 작성하기 2 - 고정 다단 스타일</h3>
+        <div class="wrap column2">
+            연소자의 근로는 특별한 보호를 받는다. 대통령의 임기가 만료되는 때에는 임기만료 70일 내지 40일전에 후임자를 선거한다.
+            농업생산성의 제고와 농지의 합리적인 이용을 위하거나 불가피한 사정으로 발생하는 농지의 임대차와 위탁경영은 법률이 정하는 바에 의하여 인정된다.
+            정당은 그 목적·조직과 활동이 민주적이어야 하며, 국민의 정치적 의사형성에 참여하는데 필요한 조직을 가져야 한다.
+            이 헌법공포 당시의 국회의원의 임기는 제1항에 의한 국회의 최초의 집회일 전일까지로 한다.
+        </div>
+    </body>
+</html>

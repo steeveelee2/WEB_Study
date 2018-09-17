@@ -1,0 +1,139 @@
+<html>
+    <head>
+        <title>레이아웃 스타일 4</title>
+        <style>
+            .outer{
+                position: relative; /* 상대 위치 */
+            }
+            .positioning{
+                border: 1px solid red;
+            }
+            .first{
+                width: 300px;
+                height: 300px;
+                background: cyan;
+            }
+            .second{
+                width: 200px;
+                height: 200px;
+                background: magenta;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+            }
+            .third{
+                width: 100px;
+                height: 100px;
+                background: greenyellow;
+                position: absolute;
+                top: 100px;
+                left: 100px;
+            }
+            .fixed-area{
+                width: 100px;
+                height: 100px;
+                position: fixed;
+                background: yellow;
+            }
+            .vis-test{
+                width: 100px;
+                height: 100px;
+                border: 1px solid salmon;
+            }
+            .vis-test1{
+                background: springgreen;
+            }
+            .vis-test2{
+                background: navy;
+                display: none;
+            }
+            .vis-test3{
+                background: fuchsia
+            }
+            .wrap{
+                position: relative;
+            }
+            .z-test{
+                width: 100px;
+                height: 100px;
+                border: 1px solid yellow;
+            }
+            .z-test1{
+                background: red;
+                position: absolute;
+                top: 100px;
+                left: 100px;
+                z-index: 1000;
+            }
+            .z-test2{
+                background: green;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                z-index: 100;
+            }
+            .z-test3{
+                background:purple;
+                position: absolute;
+            }
+            .float{
+                width: 800px;
+                height: 300px;
+                border: 3px solid royalblue;
+            }
+            .float-test{
+                border: 1px solid peru;
+                width: 100px;
+                height: 100px;
+                float: right;
+            }
+            .test-div{
+
+            }
+        </style>
+    </head>
+    <body>
+        <h1>레이아웃 스타일 4</h1>
+        <h3>절대 위치와 상대 위치</h3>
+        <div class="outer">
+            <div class="positioning first"></div>
+            <div class="positioning second"></div>
+            <div class="positioning third"></div>
+        </div>
+
+        <h3>고정 위치</h3>
+        <div class="positioning fixed-area"></div>
+
+        <hr>
+
+        <h3>visibility</h3>
+        <p>페이지에 특정 속성을 보이거나 안보이게 설정하는 스타일</p>
+        <pre>
+            visibility : 내용이 보이지 않아도 공간을 차지하여 해당 태그 요소가 존재함을 나타낸다
+            display : none 속성은 내용이 화면에 보이지도 않고, 공간도 차지하지 않는다
+        </pre>
+        <div class="vis-test vis-test1"></div>
+        <div class="vis-test vis-test2"></div>
+        <div class="vis-test vis-test3"></div>
+
+         <hr>
+
+         <h3>페이지 내의 요소들을 특정 순서로 쌓아 배치하기</h3>
+         <div class="wrap">
+             <div class="z-test z-test1">요소1</div>
+             <div class="z-test z-test2">요소2</div>
+             <div class="z-test z-test3">요소3</div>
+         </div>
+
+         <h3>float 속성</h3>
+         <p>페이지 내의 요소들을 왼쪽이나 오른쪽 기준으로 재정렬하는 속성</p>
+         <div class="float">
+             <div class="float-test">1번</div>
+             <div class="float-test">2번</div>
+             <div class="float-test">3번</div>
+             <div class="float-test">4번</div>
+             <div class="float-test">5번</div>
+             <div class="test-div">TEST DIV</div>
+         </div>
+    </body>
+</html>

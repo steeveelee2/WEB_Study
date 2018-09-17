@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title>애니매이션 스타일</title>
+        <style>
+            @keyframes trans1{
+                from{
+                    background: red;
+                    border: 1px solid khaki;
+                }
+                to{
+                    background: blue;
+                    border-radius: 50%;
+                    transform: perspective(300px) rotate(360deg);
+                    border: 3px solid olive;
+                }
+            }
+
+            /* 여러 변화 적용 */
+            @keyframes trans2{
+                0%{
+                    background: red;
+                    border: 1px solid black;
+                }
+                30%{
+                    transform: translate(50px,50px);
+                }
+                50%{
+                    background: green;
+                    transform: scale(1.2);
+                    border: 3px solid gray;
+                }
+                100%{
+                    background: purple;
+                    transform: rotate(45deg);
+                    border: 3px solid white;
+                }
+            }
+            .div1{
+                margin: 100px;
+                width: 100px;
+                height: 100px;
+                background: green;
+                animation-name: trans1;
+                animation-duration: 5s;
+                animation-direction: normal;
+                animation-iteration-count: 10;
+            }
+
+            .div2{
+                margin: 100px;
+                width: 100px;
+                height: 100px;
+                animation-name: trans2;
+                animation-duration: 5s;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+            }
+
+            img{
+                margin: 100px;
+                width: 100px;
+                height: 100px;
+                animation-name: trans1;
+                animation-duration: 3s;
+                animation-direction: alternate;
+                animation-iteration-count: infinite;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>애니매이션 스타일</h1>
+        <h3>@keyframes을 활용한 애니매이션 구현</h3>
+        <div class="div1"></div>
+
+        <h3>이것저것</h3>
+        <div class="div2"></div>
+
+        <img src="../resource/image/bgsample.PNG">
+    </body>
+</html>

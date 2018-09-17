@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>트랜지션 스타일</title>
+        <style>
+            .trans1{
+                width: 100px;
+                height: 100px;
+                background: yellow;
+                border: 1px solid blueviolet;
+                transition-duration: 2s;
+            }
+            .trans1:hover{
+                background: aqua;
+                border: 3px dashed yellowgreen;
+            }
+            .trans2{
+                width: 100px;
+                height: 100px;
+                background: red;
+                border: 1px solid green;
+                transition-property: background-color, transform, width, height;
+                transition-duration: 2s,3s,1s,2s;
+            }
+            .trans2:hover{
+                background: blue;
+                width: 150px;
+                height: 200px;
+                transform: rotateY(150deg);
+            }
+            .trans3{
+                width: 200px;
+                height: 200px;
+                background: plum;
+                border: 1px solid black;
+                transition-duration: 2s;
+                /* transition-timing-function: ease-in; */
+                /* transition-timing-function: ease-out; */
+                transition-timing-function: ease-in-out;
+            }
+            .trans3:hover{
+                background: olive;
+                transform: rotateZ(180deg);
+            }
+            .trans4{
+                width: 100px;
+                height: 100px;
+                background: hotpink;
+                border:1px solid wheat;
+                transition-duration: 2s;
+                transition-delay: 2s;
+            }
+            .trans4:active{
+                background: saddlebrown;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <h1>트랜지션 스타일</h1>
+        <p>시간에 따라 각각 다른 모양을 구성할 수 있는 요소를 만들어 주는 속성들</p>
+
+        <h3>트랜지션 진행 시간 설정하기</h3>
+        <div class="trans1"></div>
+
+        <h3>트랜지션 영역별 시간 설정하기</h3>
+        <div class="trans2"></div>
+
+        <h3>트랜지션 진행 구간 별 속도 설정하기</h3>
+        <p>transition-timing-function : linear | ease | ease-in | ease-out | . . . </p>
+        <div class="trans3"></div>
+
+        <h3>딜레이</h3>
+        <div class="trans4"></div>
+    </body>
+</html>
