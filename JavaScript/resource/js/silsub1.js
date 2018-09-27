@@ -56,3 +56,28 @@ function calculator(op){
     }
     calc.innerHTML+=result;
 }
+
+
+// 하노이
+
+
+
+function finish(obj){
+    obj.style.color ="MidnightBlue";
+    document.getElementById('bun').style.display = "block";
+}
+
+function hanoiStart(){
+    var num=document.getElementById("hanoi").value;
+    cns.innerHTML="결과<br>";
+    hanoi(num,1,3);
+    cns.innerHTML+="--------------<br>";
+    cns.innerHTML+="총 원판 : "+num+" 개<br>";
+    cns.innerHTML+="최소 이동 횟수 : "+(Math.pow(2,num)-1)+"<br>";
+}
+
+function hanoi(num,a,b){
+    if(num>1) hanoi(num-1,a,6-(a+b));
+    cns.innerHTML+="원판["+num+"] : "+(a==1?"A":a==2?"B":"C")+" ------- "+(b==1?"A":b==2?"B":"C")+"<br>";
+    if(num>1) hanoi(num-1,6-(a+b),b);
+}

@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <title>자바 스크립트 객체 배열</title>
+        <style>
+            .area{
+                width: 500px;
+                height: auto;
+                border: 5px dashed magenta;
+                background: cyan;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>자바 스크립트 객체 배열</h1>
+        <h3>객체와 배열을 사용하여 데이터 관리하기</h3>
+        <button onclick="test1();">실행 확인</button>
+        <div id="area1" class="area"></div>
+
+        <script>
+            function test1(){
+                var student0={
+                    name:"홍길동",
+                    java:60,
+                    oracle:70,
+                    html:80,
+                    css:90
+                }
+                var student1={
+                    name:"이길동",
+                    java:61,
+                    oracle:71,
+                    html:81,
+                    css:91
+                }
+                var student2={
+                    name:"박길동",
+                    java:62,
+                    oracle:72,
+                    html:82,
+                    css:92
+                }
+                var student3={
+                    name:"최길동",
+                    java:63,
+                    oracle:73,
+                    html:83,
+                    css:93
+                }
+                var student4={
+                    name:"김길동",
+                    java:64,
+                    oracle:74,
+                    html:84,
+                    css:94
+                }
+                var student5={
+                    name:"고길동",
+                    java:65,
+                    oracle:75,
+                    html:85,
+                    css:95
+                }
+                var student6={
+                    name:"정길동",
+                    java:66,
+                    oracle:76,
+                    html:86,
+                    css:96
+                }
+                var student7={
+                    name:"허길동",
+                    java:67,
+                    oracle:77,
+                    html:87,
+                    css:97
+                }
+                var student8={
+                    name:"안길동",
+                    java:68,
+                    oracle:78,
+                    html:88,
+                    css:98
+                }
+                var student9={
+                    name:"신길동",
+                    java:69,
+                    oracle:79,
+                    html:89,
+                    css:99
+                }
+
+                var students=[];
+                students.push(student0);
+                students.push(student1);
+                students.push(student2);
+                students.push(student3);
+                students.push(student4);
+                students.push(student5);
+                students.push(student6);
+                students.push(student7);
+                students.push(student8);
+                students.push(student9);
+
+                console.log(students);
+
+                // 각 객체별로 메소드(함수) 추가하기
+                for(var i in students){
+                    students[i].getSum=function () {
+                        return this.java+this.oracle+this.html+this.css;
+                    }
+
+                    students[i].getAvg=function (){
+                        return this.getSum()/4;
+                    }
+                }
+
+                console.log(students);
+
+                // for in 과 with 활용
+                for(var i in students){
+                    with(students[i]){
+                        area1.innerHTML+="이름 : "+name+", 총점 : "+getSum()+", 평균 : "+getAvg();+"<br>"
+                    }
+                }
+            }
+        </script>
+
+        <hr>
+
+        <h3>자바 스크립트 생성자 함수 구현하기</h3>
+        <p>자바 스크립트에서도 new 키워드를 사용하여 객체를 생성할 수 있다.</p>
+        <button onclick="test2();">실행 확인</button>
+        <div id="area2" class="area"></div>
+
+        <script>
+            // 자바 스크립트 생성자
+            function Student(name, java, oracle, html, css){
+                // 1. 필드 속성을 정의
+                this.name=name;
+                this.java=java;
+                this.oracle=oracle;
+                this.html=html;
+                this.css=css;
+
+                // 클로져를 통한 객체 함수 정의
+                this.getSum=function(){
+                    return this.java+this.oracle+this.html+this.css;
+                }
+                
+                this.getAvg=function(){
+                    return this.getSum()/4;
+                }
+
+                this.toString=function(){
+                    return "이름 : "+this.name+", 총점 : "+this.getSum()+", 평균 : "+this.getAvg()+"<br>";
+                }
+            }
+
+            var students2=[];
+
+            function test2(){
+                var student=new Student(
+                    prompt("이름"),
+                    parseInt(prompt("자바")),
+                    parseInt(prompt("오라클")),
+                    parseInt(prompt("에이치티에멜")),
+                    parseInt(prompt("씨에쎄쓰"))
+                );
+
+                area2.innerHTML+=student.toString();
+                
+                students2.push(student);
+                console.log(students2);
+            }
+        </script>
+    </body>
+</html>
