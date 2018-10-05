@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>RainbowColor 체크박스 연습</title>
+<script src="../resource/js/jquery-3.3.1.min.js"></script>
 <style type="text/css">
 	table {
 			border: solid gray 1px;
@@ -21,17 +22,6 @@
 	.navy {background-color: navy; color: white;}
 	.violet {background-color: purple; color: white;} /* violet은 핑크색에 가깝다. */
 </style>
-<script src="../resource/js/jquery-3.3.1.min.js">
-	// 전체를 선택했을 때 모든 색상이 전체 색상으로 변경되도록,
-    // 각각 다른 색을 선택하거나 선택하지 않았을 때 전체 색상이
-    // 선택 해제 되도록, reset을 눌렀을 때 모든 색상이 초기화 되도록
-    // 소스코드를 작성하신 후 js 폴더를 만들어 rainbowColor.js라는 이름으로
-    // 소스 코드를 적용하고 script를 불러와 실행하세요.
-    $('#resetFrm').click(function(){
-        $('table *').removeAttr('style');
-        $('checkbox *').prop()
-    });
-</script>
 </head>
 <body>
 	<div style="top:50px" align="center">
@@ -161,5 +151,27 @@
 		</form>
 		
 	</div>
+
+	<script>
+		// 전체를 선택했을 때 모든 색상이 전체 색상으로 변경되도록,
+		// 각각 다른 색을 선택하거나 선택하지 않았을 때 전체 색상이
+		// 선택 해제 되도록, reset을 눌렀을 때 모든 색상이 초기화 되도록
+		// 소스코드를 작성하신 후 js 폴더를 만들어 rainbowColor.js라는 이름으로
+		// 소스 코드를 적용하고 script를 불러와 실행하세요.
+		$(()=>{
+			$('input:checkbox').click(function(){
+				if($(this).parent().attr('id')=='row0'){
+					
+				}else{
+					$(this).prop('checked')&&$(this).parent().addClass($(this).val());
+					$(this).prop('checked')||$(this).parent().removeClass();
+				}
+			});
+		});
+		$('#resetFrm').click(function(){
+			$('table *').parent().removeClass();
+			$('input:checkbox').prop('checked',false);
+		});
+	</script>
 </body>
 </html>
