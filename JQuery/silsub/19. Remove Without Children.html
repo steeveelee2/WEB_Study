@@ -10,8 +10,8 @@
 	 */
 	function run() {
 		$(()=>{
-			$('#target').each(function(){
-				$(this).length==0&&$(this).remove();
+			$('div').each(function(){
+				$(this).children().length==0&&$(this).remove();
 			})
 		});
 	}
