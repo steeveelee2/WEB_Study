@@ -10,9 +10,7 @@
 	 */
 	function run() {
 		$(()=>{
-			$('#target').html(function(){
-				$(this).replace(/h2/gm,'h3');
-			});
+			$('#target').html($('#target').html().replace(/h2/gm,'h3'));
 		});
 	}
 </script>

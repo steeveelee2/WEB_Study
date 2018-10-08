@@ -11,7 +11,7 @@
 	 */
 	function run() {
 		$(()=>{
-			$(document).replace(/cat/gm,'dog');
+			$('#target').html($('#target').html().replace(/cat/gm,'dog'));
 		});
 	}
 </script>
