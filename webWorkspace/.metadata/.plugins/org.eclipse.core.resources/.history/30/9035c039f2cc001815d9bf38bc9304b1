@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>servlet2Project</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 서블릿 등록하기 1번 -->
+  <!-- 초창기 서블릿 등록 방법 -->
+  <servlet>
+  	<servlet-name>test1</servlet-name>
+  	<servlet-class>test.sample.TestServlet1</servlet-class>
+  </servlet>
+  
+  <!-- 서블릿에 맞는 URL 맵핑 -->
+  <!--
+  <servlet-mapping>
+  	<servlet-name>test1</servlet-name>
+  	<url-pattern>/test1.do</url-pattern>
+  </servlet-mapping>
+  -->
+</web-app>
