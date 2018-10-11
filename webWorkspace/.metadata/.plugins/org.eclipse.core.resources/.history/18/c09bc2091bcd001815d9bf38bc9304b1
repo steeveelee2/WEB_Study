@@ -36,7 +36,5 @@
 	<%=s%>
 	<%} %>
 	
-	<% for(String s : food) out.println(s); %>
-	
 </body>
 </html>
