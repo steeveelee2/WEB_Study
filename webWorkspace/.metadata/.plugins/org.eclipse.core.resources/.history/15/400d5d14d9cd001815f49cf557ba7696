@@ -1,7 +1,0 @@
-package test.common;
-
-import javax.servlet.http.HttpServletRequestWrapper;
-
-public class LoginWrapper extends HttpServletRequestWrapper {
-
-}

@@ -4,20 +4,30 @@
     </head>
     <body>
         <fieldset>
+            <select name="" id="s">
+                <option value="A"></option>
+                <option value="B"></option>
+            </select>
             <legend>납품자 정보</legend>
-            1. 납품자 명 : <input type="text" placeholder="name">
-            <br>
-            2. email : <input type="email" placeholder="answs@naver.com">
-            <br>
-            3. 홈페이지 : <input type="url" value="https://">
+            <ol>
+                <li>납품자명 : <input list="product">
+                    <datalist id="product">
+                        <option value="dog1004">도그1004</option>
+                        <option value="catchicken">고양이치킨</option>
+                        <option value="milk">우유</option>
+                    </datalist>
+                </li><br>
+                <li>email : <input type="email" placeholder="answs@naver.com"></li><br>
+                <li>홈페이지 : <input type="url" value="https://"></li>
+            </ol>
         </fieldset>
         <fieldset>
             <legend>납품 정보</legend>
             <ul>
-                <li>상품명 : <input type="text"></li>
-                <li>납품수량 : <input type="number" placeholder="최소100" min="100"></li>
-                <li>납품등급 : <input type="range" max="5" min="1" step="1" value="3"></li>
-                <li>기타사항 : <textarea name="" id="" cols="30" rows="5"></textarea></li>
+                <li>상품명 : <input type="text"></li><br>
+                <li>납품수량 : <input type="number" placeholder="최소10이상" min="10" max="100" step="10"></li><br>
+                <li>납품등급 : <input type="range" max="10" min="0" step="2" value="8"></li><br>
+                <li>기타사항 : <textarea cols="30" rows="5"></textarea></li>
             </ul>
         </fieldset>
     </body>
