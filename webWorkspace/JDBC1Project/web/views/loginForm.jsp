@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.kh.jdbc.model.vo.*" %>
+<%
+	Member m=(Member)session.getAttribute("m");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +13,9 @@
 <body>
 	<%@ include file="common/header.jsp" %>
 	
+	<% if(m==null) {%>
 	<h3>로그인 폼</h3>
+	
 	
 	<form action="/jdbc1/login.do" method="post">
 	
@@ -19,6 +25,18 @@
 		<input type="submit" value="로그인"/>
 		
 	</form>
+	<%} else { %>
+	<h3>ㅎㅇ <%=m.getUserName() %></h3>
+	
+	<p>로그아웃 허쉴?</p>
+	<button type="button" id="logoutBtn" onclick="logout();">로그아웃</button>
+	
+	<script>
+		function logout(){
+			location.href="/jdbc1/logout.do"
+		}
+	</script>
+	<%} %>
 	
 	<%@ include file="common/footer.jsp" %>
 </body>

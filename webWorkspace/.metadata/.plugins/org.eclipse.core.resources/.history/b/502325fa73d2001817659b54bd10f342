@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="com.kh.jdbc.model.vo.*" %>
+<%
+	Member m=(Member)session.getAttribute("m");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 정보 수정 페이지</title>
+<script src="/jdbc1/resouces/js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+	<%@ include file="../common/header.jsp" %>
+	
+	<h1>회원 정보 수정 페이지</h1>
+	
+	<form action="/jdbc1/mUpdate.do" method="post">
+	
+	</form>
+	
+	<%@ include file="../common/footer.jsp" %>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>에러 페이지</title>
+</head>
+<body>
+	<%@ include file="/views/commom/header.jsp" %>
+	
+	<h1>에러 발생</h1>
+	<p>관리자에게 문의하시오</p>
+	
+	<%@ include file="/views/commom/footer.jsp" %>
+</body>
+</html>

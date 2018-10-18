@@ -1,0 +1,127 @@
+package com.kh.jdbc.model.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.kh.jdbc.model.vo.Member;
+
+// DAO(Data Access Object) : 
+// service로부터 전달받은 데이터를 실제 DB에 전달하여 CRUD를 실행하는 객체
+public class MemberDao {
+	
+	// 회원 가입을 위한 메소드
+	public int insertMember(Member m) {
+		
+		// 결과 확인을 위한 변수 result
+		int result=0;
+		
+		// SQL 쿼리 정보를 담기 위한 Statement
+		Statement stmt=null;
+		
+		// Connection : DB 연결 정보를 담은 객체
+		Connection con=null;
+		
+		try {
+			// 1. JDBC 드라이버 설정을 위한 Class 등록하기
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			// 2. DataBase 연결 객체 생성
+			con=DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:1521:xe",
+					"JSP",
+					"JSP"
+					);
+			
+			// 3. 실행하는 sql 구문의 트랜잭션 제어
+			// 일반적으로 Connection 객체를 생성할 경우 자동 커밋 설정이 되어 있는데 쿼리가 한 행 한 행 실행될 때마다 자동으로 커밋이 발생한다 
+			// 따라서 자동 커밋을 직접 제어하기 위해 autoCommit() 메소드 설정을 변경한다
+			con.setAutoCommit(false);
+			
+			// 3-1. 연결을 통해 사용하기 위한 쿼리 수행 객체 생성
+			stmt=con.createStatement();
+			
+			// 4. 실행하고자 하는 쿼리 생성
+			String sql="INSERT INTO MEMBER VALUES ('"+m.getUserId()
+													+"', '"+m.getUserPwd()
+													+"', '"+m.getUserName()
+													+"', '"+m.getGender()
+													+"', "+m.getAge()
+													+", '"+m.getEmail()
+													+"', '"+m.getPhone()
+													+"', '"+m.getAddress()
+													+"', '"+m.getHobby()
+													+"', DEFAULT)";
+			
+			System.out.println("쿼리 : "+sql);
+			
+			// 5. 작성한 쿼리를 실행시켜 실행 결과를 받기
+			// select : ResultSet 객체
+			// insert, update, delete : 실행된 행의 개수(정수형)
+			result=stmt.executeUpdate(sql);
+			
+			// 결과가 정상으로 수행되었다면 1
+			if(result>0){
+				con.commit();
+			}else{
+				con.rollback();
+			}
+			
+			
+		} catch (ClassNotFoundException|SQLException e) {
+			e.printStackTrace();
+		
+		}finally{
+			try {
+				stmt.close();
+				con.close();
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+				
+			}
+		}
+		
+		return result;
+	}
+
+	public Member selectMember(Member m) {
+		
+		// select의 경우 반환하는 값이 정수형이 아닌 객체이다
+		// 따라서 반환할 객체를 먼저 생성하도록 한다
+		Member result=null;
+		Connection con=null; // DB 연결 객체
+		Statement stmt=null; // 쿼리 수행 객체
+		ResultSet rSet=null; // 조회한 결과를 담을 객체
+		
+		try {
+			// 1. jdbc 드라이버 설정
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			// 2. DataBase 연결을 위한 Connection 객체 생성
+			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","JSP","JSP");
+			
+			// 3. 연결 객체의 커밋을 직접 통제하기 위해 autoCommit 해제하기
+			con.setAutoCommit(false);
+			
+			// 4. 사용하기 위한 쿼리 수행 객체 생성하기
+			stmt=con.createStatement();
+			
+			// 5. 실행하고자 하는 쿼리 생성하기
+			String sql="SELECT * FROM MEMBER WHERE USERID='"+m.getUserId()+"' AND PASSWORD='"+m.getUserPwd()+"'";
+			
+			System.out.println("쿼리 : "+sql);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			
+		}
+		
+		
+		
+		
+		return result;
+		
+	}
+}
